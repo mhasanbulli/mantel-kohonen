@@ -1,8 +1,8 @@
-import numpy as np
+from typing import Annotated
 
+import numpy as np
 from numpy import ndarray
 from pydantic import BaseModel, Field
-from typing import Annotated
 
 
 class Config(BaseModel):
@@ -31,13 +31,9 @@ def train(input_data: ndarray, weights: ndarray, config: Config) -> ndarray:
     neighbour_radius = max(config.width, config.height) / 2
     radius_decay_const = config.n_max_iterations / np.log(neighbour_radius)
 
-    radius_decay = [
-        neighbour_radius * np.exp(-t / radius_decay_const)
-        for t in range(config.n_max_iterations)
-    ]
+    radius_decay = [neighbour_radius * np.exp(-t / radius_decay_const) for t in range(config.n_max_iterations)]
     learning_rate_decay = [
-        config.learning_rate * np.exp(-t / radius_decay_const)
-        for t in range(config.n_max_iterations)
+        config.learning_rate * np.exp(-t / radius_decay_const) for t in range(config.n_max_iterations)
     ]
 
     grid_x, grid_y = np.indices((config.width, config.height))

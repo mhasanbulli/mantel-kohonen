@@ -14,4 +14,43 @@ dev = [
     "jupyterlab~=4.6",
     "matplotlib~=3.11",
     "pytest~=9.1",
+    "pyright==1.1.411",
+    "pre-commit~=4.6",
 ]
+
+[tool.ruff]
+line-length = 120
+src = ["."]
+fix = true
+show-fixes = true
+
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+exclude = ["**/__pycache__", "**/.*", "build"]
+strictListInference = true
+strictDictionaryInference = true
+strictParameterNoneValue = true
+reportTypedDictNotRequiredAccess = false
+reportIncompatibleVariableOverride = true
+reportIncompatibleMethodOverride = true
+reportMatchNotExhaustive = true
+reportUnnecessaryTypeIgnoreComment = true

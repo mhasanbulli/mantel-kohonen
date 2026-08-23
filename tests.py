@@ -1,11 +1,10 @@
 import numpy as np
-
 from numpy import ndarray
 from pytest import fixture
 
 from kohonen import train
-from kohonen_refactored import train as train_refactored
 from kohonen_refactored import Config
+from kohonen_refactored import train as train_refactored
 
 
 @fixture(scope="session")
