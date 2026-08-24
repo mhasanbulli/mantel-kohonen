@@ -17,8 +17,8 @@ def update_weights(
     d: ndarray,
     grid_x: ndarray,
     grid_y: ndarray,
-    bmu_x: ndarray,
-    bmu_y: ndarray,
+    bmu_x: np.integer,
+    bmu_y: np.integer,
     radius_decay: float,
     learning_rate_decay: float,
 ) -> None:
@@ -30,8 +30,7 @@ def update_weights(
 def train(input_data: ndarray, weights: ndarray, config: Config) -> ndarray:
     if input_data.shape[-1] != weights.shape[-1]:
         raise ValueError(
-            f"input_data feature dim ({input_data.shape[-1]}) must match "
-            f"weights feature dim ({weights.shape[-1]})"
+            f"input_data feature dim ({input_data.shape[-1]}) must match weights feature dim ({weights.shape[-1]})"
         )
 
     neighbour_radius = max(config.width, config.height) / 2

@@ -35,6 +35,7 @@ select = [
     "C4", # flake8-comprehensions
     "UP", # pyupgrade
 ]
+exclude = ["*.ipynb"]
 
 [tool.ruff.format]
 quote-style = "double"
