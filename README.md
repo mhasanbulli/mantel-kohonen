@@ -1,4 +1,4 @@
-# Factorisation of Kohonen Self-organising Map (SOME)
+# Factorisation of Kohonen Self-organising Map (SOM)
 
 ## Pre-requisites
 
@@ -21,4 +21,4 @@ make install
   - [kohonen.py](./kohonen.py) and [kohonen_refactored.py](./kohonen_refactored.py): These are the main module files I used for testing, and refactoring.
   - [tests.py](./tests.py): Very simple (and, definitely not the best way for testing) test setup, so I did not break anything while refactoring.
 - I have not used any AI tools to produce, or write any part you see in the repo.
-- I spent in total 2-3 hours from start to finish including understanding how SOME works.
+- I spent in total 2-3 hours from start to finish including understanding how SOM works.
