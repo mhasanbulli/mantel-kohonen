@@ -6,7 +6,7 @@ import numpy as np
 def train(input_data, n_max_iterations, width, height):
     σ0 = max(width, height) / 2  # constant
     α0 = 0.1  # constant
-    weights = np.random.random((width, height, 3))  # 10 x 10 grid with 3D indices
+    weights = np.random.random((width, height, 3))  # 10 x 10 grid with 3D prototype vectors
     λ = n_max_iterations / np.log(σ0)  # constant
     for t in range(n_max_iterations):
         σt = σ0 * np.exp(-t / λ)  # constant

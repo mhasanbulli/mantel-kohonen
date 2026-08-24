@@ -28,6 +28,12 @@ def update_weights(
 
 
 def train(input_data: ndarray, weights: ndarray, config: Config) -> ndarray:
+    if input_data.shape[-1] != weights.shape[-1]:
+        raise ValueError(
+            f"input_data feature dim ({input_data.shape[-1]}) must match "
+            f"weights feature dim ({weights.shape[-1]})"
+        )
+
     neighbour_radius = max(config.width, config.height) / 2
     radius_decay_const = config.n_max_iterations / np.log(neighbour_radius)
 
